@@ -1,0 +1,8 @@
+server:
+  port: 8081
+
+consumer:
+  kafka:
+    address: localhost:9092
+    group-id: kafka_group
+    topic: notification
