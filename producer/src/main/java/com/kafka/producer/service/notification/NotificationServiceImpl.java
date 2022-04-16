@@ -14,8 +14,8 @@ public class NotificationServiceImpl implements NotificationService {
     private static final ObjectMapper mapper = new ObjectMapper();
     private final BrokerService brokerService;
 
-    @Value("${producer.kafka.group-id}")
-    private String groupId;
+    @Value("${producer.kafka.topic}")
+    private String topic;
 
     @Autowired
     public NotificationServiceImpl(BrokerService brokerService) {
@@ -24,7 +24,7 @@ public class NotificationServiceImpl implements NotificationService {
 
     @Override
     public void pushNotification(Notification notification) {
-        this.brokerService.pushMessage(groupId, this.toJson(notification));
+        this.brokerService.pushMessage(topic, this.toJson(notification));
     }
 
     private <T> String toJson(T object) {
