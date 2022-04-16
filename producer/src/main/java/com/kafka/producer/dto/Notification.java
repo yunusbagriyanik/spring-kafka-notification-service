@@ -1,17 +1,8 @@
 package com.kafka.producer.dto;
 
 public class Notification {
-    private Long id;
     private String content;
     private String type;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getContent() {
         return content;
