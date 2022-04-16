@@ -1,0 +1,15 @@
+server:
+  port: 8082
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: producer
+      url: mongodb://localhost:27017
+
+producer:
+  kafka:
+    address: localhost:9092
+    group-id: kafka_group
+    topic: notification
